@@ -1,7 +1,7 @@
 {
   "private": false,
   "name": "@airsola/husky-4-to-8",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "bin": "lib/bin.js",
   "files": [
     "/lib"

@@ -8,38 +8,21 @@ If your `package.json` is not at the same level as `.git`, please update manuall
 
 ## Usage
 
-### npm
-
-```shell
-npm install husky@latest --save-dev \
-  && npx husky-init \
-  && npm exec -- github:typicode/husky-4-to-8 --remove-v4-config
-```
-
 ### yarn
 
 Yarn 1
 
 ```shell
-yarn add husky@latest --dev \
+
+# 旧有项目升级整体复制以下命令执行即可
+
+yarn add husky@^8.0.0 @airsola/husky-4-to-8 -D  \
   && npx husky-init \
-  && npm exec -- github:typicode/husky-4-to-8 --remove-v4-config
-```
+  && npx @airsola/husky-4-to-8 --remove-v4-config \
+  && yarn remove @airsola/husky-4-to-8
 
-Yarn 2+
+# @airsola/husky-4-to-8 是一个过河即可拆桥的辅助工具
 
-```shell
-yarn add husky@latest --dev \
-  && yarn dlx husky-init --yarn2 \
-  && npm exec -- github:typicode/husky-4-to-8 --remove-v4-config
-```
-
-### pnpm
-
-```shell
-pnpm install husky@8 --save-dev \
-  && pnpx husky-init \
-  && pnpx -- github:typicode/husky-4-to-8 --remove-v4-config
 ```
 
 ## What each command does
