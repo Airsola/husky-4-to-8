@@ -64,7 +64,7 @@ See {underline https://typicode.github.io/husky/#/?id=migrate-from-v4-to-v8}
   }
 }
 
-export function run(removeV4Config: boolean): void {
+export function run(): void {
   const { hooks, filepath } = searchResult()
 
   Object.entries(hooks).forEach(([name, script]) => {
@@ -72,7 +72,7 @@ export function run(removeV4Config: boolean): void {
     set(file, script)
   })
 
-  if (removeV4Config && filepath) {
+  if (filepath) {
     if (filepath.endsWith('package.json')) {
       const str = fs.readFileSync('package.json', 'utf-8')
       const regex = /^[ ]+|\t+/m
