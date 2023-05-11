@@ -71,14 +71,15 @@ export function run(): void {
     const file = `.husky/${name}`
     console.log('inject-script', script)
     const fullScript = `
-    export NVM_DIR="$HOME/.nvm"
-    [ -s "$NVM_DIR/nvm.sh" ] && \\. "$NVM_DIR/nvm.sh"
-
-    if [[ -f ".nvmrc" ]]; then
-      nvm use
-    fi
+export NVM_DIR="$HOME/.nvm"
     
-    npx --no-install  ${script}
+[ -s "$NVM_DIR/nvm.sh" ] && \\. "$NVM_DIR/nvm.sh"
+
+if [[ -f ".nvmrc" ]]; then
+  nvm use
+fi
+    
+npx --no-install  ${script}
     `
     set(file, fullScript)
   })
