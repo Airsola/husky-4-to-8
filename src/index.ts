@@ -69,7 +69,18 @@ export function run(): void {
 
   Object.entries(hooks).forEach(([name, script]) => {
     const file = `.husky/${name}`
-    set(file, script)
+    console.log('inject-script', script)
+    const fullScript = `
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \\. "$NVM_DIR/nvm.sh"
+
+    if [[ -f ".nvmrc" ]]; then
+      nvm use
+    fi
+    
+    npx --no-install  ${script}
+    `
+    set(file, fullScript)
   })
 
   if (filepath) {
