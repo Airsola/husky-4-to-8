@@ -25,6 +25,9 @@
     "prepare": "husky install",
     "lint": "eslint src"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": "https://github.com/Airsola/husky-4-to-8",
   "author": "Typicode <typicode@gmail.com>",
   "license": "MIT"
