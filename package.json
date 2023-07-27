@@ -26,6 +26,7 @@
     "lint": "eslint src"
   },
   "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
     "access": "public"
   },
   "repository": "https://github.com/Airsola/husky-4-to-8",
